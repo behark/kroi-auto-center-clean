@@ -36,6 +36,8 @@ services:
         value: "1"
       - key: NODE_OPTIONS
         value: "--max-old-space-size=512"
+      - key: UV_THREADPOOL_SIZE
+        value: "2"
 
     # Auto-deployment and scaling
     autoDeploy: true

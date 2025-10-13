@@ -96,22 +96,37 @@ const PerformanceMonitor = () => {
       }
     }
 
-    // Memory usage monitoring (if available)
+    // Memory usage monitoring (if available) - with proper cleanup
     if ('memory' in performance) {
       const checkMemory = () => {
         const memory = (performance as any).memory
         if (memory) {
-          console.log('Memory Usage:', {
-            'Used': Math.round(memory.usedJSHeapSize / 1024 / 1024) + 'MB',
-            'Total': Math.round(memory.totalJSHeapSize / 1024 / 1024) + 'MB',
-            'Limit': Math.round(memory.jsHeapSizeLimit / 1024 / 1024) + 'MB',
-          })
+          // Only log if memory usage is concerning (>80% of limit)
+          const usedMB = Math.round(memory.usedJSHeapSize / 1024 / 1024)
+          const limitMB = Math.round(memory.jsHeapSizeLimit / 1024 / 1024)
+
+          if (usedMB / limitMB > 0.8) {
+            console.warn('High Memory Usage:', {
+              'Used': usedMB + 'MB',
+              'Total': Math.round(memory.totalJSHeapSize / 1024 / 1024) + 'MB',
+              'Limit': limitMB + 'MB',
+              'Usage': Math.round((usedMB / limitMB) * 100) + '%'
+            })
+          }
         }
       }
 
-      // Check memory every 30 seconds
-      const memoryInterval = setInterval(checkMemory, 30000)
-      return () => clearInterval(memoryInterval)
+      // Check memory every 60 seconds (less frequent) and only in development
+      let memoryInterval: NodeJS.Timeout | null = null
+      if (process.env.NODE_ENV === 'development') {
+        memoryInterval = setInterval(checkMemory, 60000)
+      }
+
+      return () => {
+        if (memoryInterval) {
+          clearInterval(memoryInterval)
+        }
+      }
     }
   }, [])
 

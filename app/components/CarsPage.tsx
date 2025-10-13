@@ -52,59 +52,58 @@ export default function CarsPage() {
   const [selectedKmRange, setSelectedKmRange] = useState<typeof kmRanges[0] | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string>('')
 
-  // Filter and sort cars
+  // Filter and sort cars - optimized memory usage
   const filteredCars = useMemo(() => {
-    let filtered = [...cars]
+    // Start with original array reference to avoid unnecessary copying
+    let filtered = cars
 
-    // Search filter
+    // Search filter - only create new array if needed
     if (searchQuery) {
-      filtered = filtered.filter(car =>
-        car.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        car.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        car.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        car.description.toLowerCase().includes(searchQuery.toLowerCase())
+      const query = searchQuery.toLowerCase()
+      filtered = cars.filter(car =>
+        car.name.toLowerCase().includes(query) ||
+        car.brand.toLowerCase().includes(query) ||
+        car.model.toLowerCase().includes(query) ||
+        car.description.toLowerCase().includes(query)
       )
+    } else {
+      // If no search, work with original array
+      filtered = cars
     }
 
-    // Brand filter
-    if (selectedBrand) {
-      filtered = filtered.filter(car => car.brand === selectedBrand)
-    }
+    // Apply all filters in single pass to avoid multiple array copies
+    if (selectedBrand || selectedYear || selectedFuel || selectedTransmission ||
+        selectedPriceRange || selectedKmRange || selectedCategory) {
+      filtered = filtered.filter(car => {
+        // Brand filter
+        if (selectedBrand && car.brand !== selectedBrand) return false
 
-    // Year filter
-    if (selectedYear) {
-      filtered = filtered.filter(car => car.year === selectedYear)
-    }
+        // Year filter
+        if (selectedYear && car.year !== selectedYear) return false
 
-    // Fuel filter
-    if (selectedFuel) {
-      filtered = filtered.filter(car => car.fuel === selectedFuel)
-    }
+        // Fuel filter
+        if (selectedFuel && car.fuel !== selectedFuel) return false
 
-    // Transmission filter
-    if (selectedTransmission) {
-      filtered = filtered.filter(car => car.transmission === selectedTransmission)
-    }
+        // Transmission filter
+        if (selectedTransmission && car.transmission !== selectedTransmission) return false
 
-    // Price range filter
-    if (selectedPriceRange) {
-      filtered = filtered.filter(car =>
-        car.priceEur >= selectedPriceRange.min &&
-        car.priceEur <= selectedPriceRange.max
-      )
-    }
+        // Price range filter
+        if (selectedPriceRange && (
+          car.priceEur < selectedPriceRange.min ||
+          car.priceEur > selectedPriceRange.max
+        )) return false
 
-    // KM range filter
-    if (selectedKmRange) {
-      filtered = filtered.filter(car =>
-        car.kmNumber >= selectedKmRange.min &&
-        car.kmNumber <= selectedKmRange.max
-      )
-    }
+        // KM range filter
+        if (selectedKmRange && (
+          car.kmNumber < selectedKmRange.min ||
+          car.kmNumber > selectedKmRange.max
+        )) return false
 
-    // Category filter
-    if (selectedCategory) {
-      filtered = filtered.filter(car => car.category === selectedCategory)
+        // Category filter
+        if (selectedCategory && car.category !== selectedCategory) return false
+
+        return true
+      })
     }
 
     // Sorting

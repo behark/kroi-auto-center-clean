@@ -5,14 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:analyze": "ANALYZE=true next build",
-    "build:production": "NODE_ENV=production next build",
-    "start": "next start",
+    "build": "NODE_OPTIONS='--max-old-space-size=1024' next build",
+    "build:analyze": "ANALYZE=true NODE_OPTIONS='--max-old-space-size=1024' next build",
+    "build:production": "NODE_ENV=production NODE_OPTIONS='--max-old-space-size=1024' next build",
+    "start": "next start --hostname 0.0.0.0 --port ${PORT:-3000}",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
-    "perf:audit": "npm run build:production && npm run start & sleep 10 && npm run lighthouse && pkill -f 'next start'"
+    "perf:audit": "npm run build:production && npm start & sleep 10 && npm run lighthouse && pkill -f 'next start'"
   },
   "dependencies": {
     "@sanity/client": "^6.21.3",
