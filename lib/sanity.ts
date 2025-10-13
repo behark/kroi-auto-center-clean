@@ -15,7 +15,7 @@ export const urlFor = (source: any) => builder.image(source)
 // GROQ queries for professional automotive data
 export const queries = {
   // Business Information for Kroi Auto Center
-  businessInfo: `*[_type == "businessInfo" && (_id == "kroi-auto-center-business")][0] {
+  businessInfo: `*[_type == "businessInfo" && _id == "business-kroi-auto"][0] {
     _id,
     name,
     description,
@@ -31,7 +31,7 @@ export const queries = {
   }`,
 
   // Team Members for Kroi Auto Center
-  teamMembers: `*[_type == "teamMember" && project->name.fi match "Kroi Auto Center"] | order(order asc) {
+  teamMembers: `*[_type == "teamMember" && businessId == "business-kroi-auto"] | order(order asc) {
     _id,
     name,
     role,
@@ -45,7 +45,7 @@ export const queries = {
   }`,
 
   // Services for Kroi Auto Center
-  services: `*[_type == "service" && project->name.fi match "Kroi Auto Center"] | order(order asc) {
+  services: `*[_type == "service" && businessId == "business-kroi-auto"] | order(order asc) {
     _id,
     name,
     description,

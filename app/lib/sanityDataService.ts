@@ -64,7 +64,7 @@ export async function getTeamMembers() {
       role: member.role,
       email: member.email,
       phone: member.phone,
-      experience: member.experience,
+      experience: member.experience ? `${member.experience} vuotta kokemusta` : '',
       languages: member.languages || [],
       specialties: member.specialties || [],
       image: member.image,
