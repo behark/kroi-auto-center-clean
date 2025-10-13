@@ -6,31 +6,38 @@ export const siteConfig = {
   url: 'https://kroiautocenter.fi',
 
   // Logo and branding
-  logoPath: '/logo-kroi.png',
+  logoPath: '/logo.png',
   logoAlt: 'Kroi Auto Center',
 
   // Contact information
   address: {
-    street: 'Pristina, Kosovo',
-    city: 'Pristina',
-    postalCode: '10000',
-    country: 'Kosovo',
-    full: 'Pristina 10000, Kosovo'
+    street: 'Läkkisepäntie 15 B 3',
+    city: 'Helsinki',
+    postalCode: '00620',
+    country: 'Finland',
+    full: 'Läkkisepäntie 15 B 3, 00620 Helsinki, Finland'
   },
 
   phone: {
-    display: '+383 XX XXX XXX',
-    tel: '+383XXXXXXX',
-    international: '+383 XX XXX XXX'
+    primary: {
+      display: '+358 41 318 8214',
+      tel: '+358413188214',
+      international: '+358 41 318 8214'
+    },
+    secondary: {
+      display: '+358 44 242 3508',
+      tel: '+358442423508',
+      international: '+358 44 242 3508'
+    }
   },
 
-  email: 'info@kroiautocenter.fi',
+  email: 'kroiautocenter@gmail.com',
 
   // Business hours
   hours: [
-    { label: 'Maanantai-Perjantai', value: '09:00 - 18:00' },
-    { label: 'Lauantai', value: '09:00 - 16:00' },
-    { label: 'Sunnuntai', value: 'Suljettu' }
+    { label: 'MA-PE', value: '10:00 - 18:00' },
+    { label: 'LA', value: '11:00 - 17:00' },
+    { label: 'SU', value: 'Suljettu' }
   ],
 
   // Social media
@@ -90,8 +97,8 @@ export const siteConfig = {
     'autokauppa',
     'automyynti',
     'autoliike',
-    'Kosovo',
-    'Pristina',
+    'Helsinki',
+    'Suomi',
     'rahoitus',
     'takuu',
     'BMW',
@@ -106,7 +113,7 @@ export const siteConfig = {
     vatNumber: 'FI12345678',
     businessId: 'Y-tunnus: 1234567-8',
     tradeRegister: 'Kaupparekisteri',
-    dataProtectionOfficer: 'tietosuoja@kroiautocenter.fi'
+    dataProtectionOfficer: 'kroiautocenter@gmail.com'
   }
 }
 

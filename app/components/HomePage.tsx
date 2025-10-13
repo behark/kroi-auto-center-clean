@@ -1,94 +1,394 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Car, Phone, Award, Shield, Star, CircleCheckBig, CreditCard, TrendingUp, Clock, Menu, X, ArrowRight, Calendar, BadgeCheck, Handshake, DollarSign } from 'lucide-react'
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
+import { Car, Phone, Award, Shield, Star, CircleCheckBig, CreditCard, TrendingUp, Clock, Menu, X, ArrowRight, Calendar, BadgeCheck, Handshake, DollarSign, Loader2, Eye, Heart, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { siteConfig } from '../lib/siteConfig'
 import { cars } from '../data/cars'
 
+// Loading skeleton component
+const SkeletonCard = () => (
+  <div className="animate-pulse bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+    <div className="h-48 bg-gray-200"></div>
+    <div className="p-6 space-y-4">
+      <div className="flex justify-between items-center">
+        <div className="h-6 bg-gray-200 rounded w-32"></div>
+        <div className="h-5 bg-gray-200 rounded w-16"></div>
+      </div>
+      <div className="h-4 bg-gray-200 rounded w-full"></div>
+      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      <div className="flex justify-between">
+        <div className="h-4 bg-gray-200 rounded w-20"></div>
+        <div className="h-4 bg-gray-200 rounded w-24"></div>
+      </div>
+      <div className="h-12 bg-gray-200 rounded"></div>
+    </div>
+  </div>
+)
+
+// Enhanced car card with loading states
+const CarCard = ({ car, index, isLoading }: { car: any, index: number, isLoading: boolean }) => {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isLiked, setIsLiked] = useState(false)
+
+  if (isLoading) return <SkeletonCard />
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 hover:-translate-y-2"
+      whileHover={{ scale: 1.02 }}
+    >
+      {/* Car Image */}
+      <div className="relative h-48 overflow-hidden bg-gray-100">
+        {!imageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+            <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+          </div>
+        )}
+        <Image
+          src={car.image}
+          alt={car.name}
+          fill
+          className={`object-cover group-hover:scale-110 transition-all duration-700 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={() => setImageLoaded(true)}
+        />
+
+        {/* Enhanced overlays */}
+        <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+          {car.year}
+        </div>
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+          {car.price}
+        </div>
+
+        {/* Like button */}
+        <motion.button
+          className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={(e) => {
+            e.preventDefault()
+            setIsLiked(!isLiked)
+          }}
+        >
+          <Heart className={`h-5 w-5 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-600'} transition-colors`} />
+        </motion.button>
+
+        {/* Quick view button */}
+        <motion.div
+          className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          initial={{ x: -20 }}
+          whileHover={{ x: 0 }}
+        >
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-semibold flex items-center space-x-1 shadow-lg">
+            <Eye className="h-4 w-4" />
+            <span>Pikatarkastelu</span>
+          </button>
+        </motion.div>
+      </div>
+
+      {/* Car Info */}
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+            {car.name}
+          </h3>
+          <motion.span
+            className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-lg group-hover:bg-blue-100 group-hover:text-blue-700 transition-colors"
+            whileHover={{ scale: 1.05 }}
+          >
+            {car.fuel}
+          </motion.span>
+        </div>
+
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">{car.description}</p>
+
+        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+          <div className="flex items-center space-x-1">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <span>{car.km}</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <span>{car.transmission}</span>
+          </div>
+        </div>
+
+        <Link
+          href={`/autot/${car.slug}`}
+          className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center py-3 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-xl transform group-hover:scale-105 active:scale-95"
+        >
+          <motion.span
+            className="flex items-center justify-center"
+            whileHover={{ x: 2 }}
+          >
+            Näytä Lisätiedot
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </motion.span>
+        </Link>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [carsLoading, setCarsLoading] = useState(true)
+  const { scrollY } = useScroll()
+  const headerOpacity = useTransform(scrollY, [0, 100], [1, 0.95])
+  const headerScale = useTransform(scrollY, [0, 100], [1, 0.98])
 
   // Get featured cars (first 6)
   const featuredCars = cars.slice(0, 6)
 
+  // Simulate loading for demonstration
+  useEffect(() => {
+    const timer = setTimeout(() => setCarsLoading(false), 1500)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 shadow-2xl border-b-4 border-blue-500 sticky top-0 z-50">
+      {/* Enhanced Header */}
+      <motion.header
+        className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 shadow-2xl border-b-4 border-blue-500 sticky top-0 z-50 backdrop-blur-sm"
+        style={{ opacity: headerOpacity, scale: headerScale }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo Section */}
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center bg-gradient-to-br from-blue-400 to-blue-600 p-2 rounded-lg shadow-lg">
-                <Car className="h-8 w-8 text-white" />
-              </div>
+          <div className="flex justify-between items-center h-16 sm:h-20">
+            {/* Logo Section - Enhanced */}
+            <motion.div
+              className="flex items-center space-x-2 sm:space-x-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div
+                className="flex items-center bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-lg border border-white/20"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="relative h-6 w-6 sm:h-8 sm:w-8">
+                  <Image
+                    src={siteConfig.logoPath}
+                    alt={siteConfig.logoAlt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </motion.div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white tracking-wide">{siteConfig.name}</span>
-                <span className="text-xs text-blue-200 font-medium">{siteConfig.subtitle}</span>
+                <span className="text-lg sm:text-2xl font-bold text-white tracking-wide">{siteConfig.name}</span>
+                <span className="hidden sm:block text-xs text-blue-200 font-medium">{siteConfig.subtitle}</span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Contact Info - Desktop */}
-            <div className="hidden lg:flex items-center space-x-6 text-white">
-              <div className="flex items-center space-x-2">
+            {/* Contact Info - Desktop Enhanced */}
+            <motion.div
+              className="hidden lg:flex items-center space-x-6 text-white"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <motion.div
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full border border-white/20"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+              >
                 <Phone className="h-4 w-4 text-blue-300" />
-                <span className="text-sm font-medium">{siteConfig.phone.display}</span>
-              </div>
-              <div className="h-6 w-px bg-blue-300"></div>
-            </div>
+                <span className="text-sm font-medium">{siteConfig.phone.primary.display}</span>
+              </motion.div>
+              <div className="h-6 w-px bg-blue-300/50"></div>
+            </motion.div>
 
-            {/* Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <Link className="text-white hover:text-blue-300 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-md hover:bg-blue-800/30" href="/autot">Autot</Link>
-              <Link className="text-white hover:text-blue-300 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-md hover:bg-blue-800/30" href="/palvelut">Palvelut</Link>
-              <Link className="text-white hover:text-blue-300 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-md hover:bg-blue-800/30" href="/rahoitus">Rahoitus</Link>
-              <Link className="text-white hover:text-blue-300 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-md hover:bg-blue-800/30" href="/tietoa">Tietoa</Link>
-              <Link className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" href="/yhteystiedot">Ota Yhteyttä</Link>
+            {/* Enhanced Navigation */}
+            <nav className="hidden lg:flex items-center space-x-2">
+              {[
+                { href: "/autot", label: "Autot" },
+                { href: "/palvelut", label: "Palvelut" },
+                { href: "/rahoitus", label: "Rahoitus" },
+                { href: "/tietoa", label: "Tietoa" }
+              ].map((link, index) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
+                >
+                  <Link
+                    className="relative text-white hover:text-blue-300 font-medium transition-all duration-300 px-4 py-2 rounded-lg hover:bg-blue-800/30 group"
+                    href={link.href}
+                  >
+                    {link.label}
+                    <motion.div
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
+                      whileHover={{ width: "100%" }}
+                    />
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl ml-4"
+                  href="/yhteystiedot"
+                >
+                  Ota Yhteyttä
+                </Link>
+              </motion.div>
             </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 rounded-md text-white hover:bg-blue-800/30 transition-colors duration-200"
+            {/* Enhanced Mobile Menu Button */}
+            <motion.button
+              className="lg:hidden p-2 rounded-lg text-white hover:bg-blue-800/30 transition-all duration-200 relative"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Avaa mobiilimenu"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Menu className="h-6 w-6" />
-            </button>
+              <AnimatePresence>
+                <motion.div
+                  key="menu-icon"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="h-6 w-6" />
+                </motion.div>
+              </AnimatePresence>
+            </motion.button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-slate-900/95 backdrop-blur-sm">
-            <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center p-6 border-b border-blue-800">
-                <div className="flex items-center space-x-3">
-                  <Car className="h-8 w-8 text-blue-400" />
-                  <span className="text-xl font-bold text-white">{siteConfig.name}</span>
+        {/* Enhanced Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="lg:hidden fixed inset-0 z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-slate-900/95 backdrop-blur-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+
+              <motion.div
+                className="relative h-full bg-gradient-to-b from-slate-900 to-blue-900 border-r border-blue-800/50"
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "-100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                style={{ width: "min(85vw, 320px)" }}
+              >
+                {/* Mobile Menu Header */}
+                <div className="flex justify-between items-center p-6 border-b border-blue-800/30 bg-white/5 backdrop-blur-sm">
+                  <motion.div
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg border border-white/20">
+                      <div className="relative h-6 w-6">
+                        <Image
+                          src={siteConfig.logoPath}
+                          alt={siteConfig.logoAlt}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-lg font-bold text-white">{siteConfig.name}</span>
+                      <div className="text-xs text-blue-200">{siteConfig.subtitle}</div>
+                    </div>
+                  </motion.div>
+
+                  <motion.button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 text-white hover:text-blue-300 transition-colors rounded-lg hover:bg-blue-800/30"
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <X className="h-6 w-6" />
+                  </motion.button>
                 </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-white hover:text-blue-300 transition-colors"
+
+                {/* Navigation Links */}
+                <nav className="flex-1 py-8">
+                  <div className="space-y-2 px-6">
+                    {[
+                      { href: "/autot", label: "Autot", icon: Car },
+                      { href: "/palvelut", label: "Palvelut", icon: Award },
+                      { href: "/rahoitus", label: "Rahoitus", icon: CreditCard },
+                      { href: "/tietoa", label: "Tietoa", icon: Shield },
+                      { href: "/yhteystiedot", label: "Ota Yhteyttä", icon: Phone }
+                    ].map((link, index) => {
+                      const IconComponent = link.icon
+                      return (
+                        <motion.div
+                          key={link.href}
+                          initial={{ opacity: 0, x: -30 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.1 + index * 0.1 }}
+                        >
+                          <Link
+                            className="flex items-center space-x-4 py-4 px-4 text-lg font-semibold text-white hover:text-blue-300 hover:bg-blue-800/20 rounded-xl transition-all duration-300 group"
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <IconComponent className="h-5 w-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                            <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
+                            <ArrowRight className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </Link>
+                        </motion.div>
+                      )
+                    })}
+                  </div>
+                </nav>
+
+                {/* Mobile Menu Footer */}
+                <motion.div
+                  className="p-6 border-t border-blue-800/30 bg-white/5 backdrop-blur-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
                 >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-              <nav className="flex-1 py-6">
-                <div className="space-y-4 px-6">
-                  <Link className="block py-3 text-lg font-semibold text-white hover:text-blue-300 transition-colors" href="/autot">Autot</Link>
-                  <Link className="block py-3 text-lg font-semibold text-white hover:text-blue-300 transition-colors" href="/palvelut">Palvelut</Link>
-                  <Link className="block py-3 text-lg font-semibold text-white hover:text-blue-300 transition-colors" href="/rahoitus">Rahoitus</Link>
-                  <Link className="block py-3 text-lg font-semibold text-white hover:text-blue-300 transition-colors" href="/tietoa">Tietoa</Link>
-                  <Link className="block py-3 text-lg font-semibold text-white hover:text-blue-300 transition-colors" href="/yhteystiedot">Ota Yhteyttä</Link>
-                </div>
-              </nav>
-            </div>
-          </div>
-        )}
-      </header>
+                  <div className="text-center">
+                    <div className="text-blue-200 text-sm mb-2">Ota yhteyttä</div>
+                    <a
+                      href={`tel:${siteConfig.phone.primary.tel}`}
+                      className="text-white font-semibold text-lg hover:text-blue-300 transition-colors"
+                    >
+                      {siteConfig.phone.primary.display}
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.header>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
@@ -190,7 +490,7 @@ export default function HomePage() {
               >
                 <div className="flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 cursor-pointer transform hover:scale-105 shadow-lg">
                   <Phone className="h-5 w-5 mr-2" />
-                  <span>Soita nyt: {siteConfig.phone.display}</span>
+                  <span>Soita nyt: {siteConfig.phone.primary.display}</span>
                 </div>
                 <Link className="text-blue-200 hover:text-white font-medium flex items-center group" href="/yhteystiedot">
                   <Calendar className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
@@ -293,56 +593,24 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Cars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCars.map((car, index) => (
-              <motion.div
-                key={car.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200"
-              >
-                {/* Car Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={car.image}
-                    alt={car.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {car.year}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
-                    {car.price}
-                  </div>
-                </div>
-
-                {/* Car Info */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">{car.name}</h3>
-                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{car.fuel}</span>
-                  </div>
-
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{car.description}</p>
-
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <span>{car.km}</span>
-                    <span>{car.transmission}</span>
-                  </div>
-
-                  <Link
-                    href={`/autot/${car.slug}`}
-                    className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center py-3 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg"
-                  >
-                    Näytä Lisätiedot
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+          {/* Enhanced Cars Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {carsLoading ? (
+              // Loading skeleton
+              Array.from({ length: 6 }).map((_, index) => (
+                <SkeletonCard key={`skeleton-${index}`} />
+              ))
+            ) : (
+              // Actual car cards
+              featuredCars.map((car, index) => (
+                <CarCard
+                  key={car.id}
+                  car={car}
+                  index={index}
+                  isLoading={false}
+                />
+              ))
+            )}
           </div>
 
           {/* View All Button */}
@@ -546,7 +814,7 @@ export default function HomePage() {
                     <Phone className="h-5 w-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="font-medium">{siteConfig.phone.display}</p>
+                    <p className="font-medium">{siteConfig.phone.primary.display}</p>
                     <p className="text-sm text-gray-400">Ma-Pe 9:00-18:00</p>
                   </div>
                 </div>

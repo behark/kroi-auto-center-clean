@@ -1,20 +1,33 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
-// Car schema - replaces the massive Prisma car model
-const car = {
-  name: 'car',
-  title: 'Car',
+// Professional Automotive Schemas from automotive-cms-schemas library
+import { vehicle } from './vehicle'
+import { service } from './service'
+import { testimonial } from './testimonial'
+import { contactInquiry } from './contactInquiry'
+import { businessInfo } from './businessInfo'
+import { teamMember } from './teamMember'
+import { blogPost } from './blogPost'
+
+// Utility schemas for internationalization and SEO
+import { localizedString, localizedText, localizedRichText } from './utils/localization'
+import { seoFields } from './utils/seo'
+
+// Project configuration schema to support multiple automotive businesses
+const project = {
+  name: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Car Name',
+      title: 'Project Name',
       type: 'string',
       validation: (Rule: any) => Rule.required()
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Project Slug',
       type: 'slug',
       options: {
         source: 'name',
@@ -23,283 +36,244 @@ const car = {
       validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'brand',
-      title: 'Brand',
-      type: 'string',
-      validation: (Rule: any) => Rule.required()
-    },
-    {
-      name: 'model',
-      title: 'Model',
-      type: 'string',
-      validation: (Rule: any) => Rule.required()
-    },
-    {
-      name: 'year',
-      title: 'Year',
-      type: 'number',
-      validation: (Rule: any) => Rule.required().min(1990).max(new Date().getFullYear() + 1)
-    },
-    {
-      name: 'price',
-      title: 'Price (EUR)',
-      type: 'number',
-      validation: (Rule: any) => Rule.required().positive()
-    },
-    {
-      name: 'mileage',
-      title: 'Mileage (km)',
-      type: 'number',
-      validation: (Rule: any) => Rule.required().min(0)
-    },
-    {
-      name: 'fuel',
-      title: 'Fuel Type',
+      name: 'type',
+      title: 'Business Type',
       type: 'string',
       options: {
         list: [
-          { title: 'Gasoline', value: 'gasoline' },
-          { title: 'Diesel', value: 'diesel' },
-          { title: 'Electric', value: 'electric' },
-          { title: 'Hybrid', value: 'hybrid' },
-          { title: 'Plug-in Hybrid', value: 'plugin-hybrid' }
+          { title: 'Car Dealership', value: 'dealership' },
+          { title: 'Car Wash', value: 'carwash' },
+          { title: 'Auto Service', value: 'service' },
+          { title: 'Multi-Service', value: 'multi' }
         ]
-      }
-    },
-    {
-      name: 'transmission',
-      title: 'Transmission',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Manual', value: 'manual' },
-          { title: 'Automatic', value: 'automatic' },
-          { title: 'CVT', value: 'cvt' }
-        ]
-      }
-    },
-    {
-      name: 'condition',
-      title: 'Condition',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'New', value: 'new' },
-          { title: 'Used', value: 'used' },
-          { title: 'Certified Pre-Owned', value: 'certified' }
-        ]
-      }
-    },
-    {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Sedan', value: 'sedan' },
-          { title: 'SUV', value: 'suv' },
-          { title: 'Hatchback', value: 'hatchback' },
-          { title: 'Convertible', value: 'convertible' },
-          { title: 'Wagon', value: 'wagon' },
-          { title: 'Coupe', value: 'coupe' }
-        ]
-      }
-    },
-    {
-      name: 'image',
-      title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true,
       },
       validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'gallery',
-      title: 'Image Gallery',
-      type: 'array',
-      of: [{ type: 'image', options: { hotspot: true } }]
+      name: 'language',
+      title: 'Primary Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Finnish', value: 'fi' },
+          { title: 'Albanian', value: 'sq' },
+          { title: 'English', value: 'en' },
+          { title: 'Serbian', value: 'sr' }
+        ]
+      },
+      validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 4
+      name: 'country',
+      title: 'Country',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Finland', value: 'FI' },
+          { title: 'Kosovo', value: 'XK' },
+          { title: 'Albania', value: 'AL' },
+          { title: 'Serbia', value: 'RS' }
+        ]
+      },
+      validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'features',
-      title: 'Features',
-      type: 'array',
-      of: [{ type: 'string' }]
+      name: 'businessInfo',
+      title: 'Business Information',
+      type: 'businessInfo'
     },
     {
-      name: 'specifications',
-      title: 'Specifications',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            { name: 'label', type: 'string', title: 'Label' },
-            { name: 'value', type: 'string', title: 'Value' }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'available',
-      title: 'Available',
+      name: 'active',
+      title: 'Active',
       type: 'boolean',
       initialValue: true
-    },
-    {
-      name: 'featured',
-      title: 'Featured',
-      type: 'boolean',
-      initialValue: false
     }
   ],
   preview: {
     select: {
       title: 'name',
-      subtitle: 'brand',
-      media: 'image'
+      subtitle: 'type',
+      language: 'language'
+    },
+    prepare(selection: any) {
+      const { title, subtitle, language } = selection
+      return {
+        title,
+        subtitle: `${subtitle} (${language})`
+      }
     }
   }
 }
 
-// Contact inquiry schema - replaces complex Prisma contact models
-const contactInquiry = {
-  name: 'contactInquiry',
-  title: 'Contact Inquiry',
+// Booking system for appointments and services
+const booking = {
+  name: 'booking',
+  title: 'Booking',
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-      validation: (Rule: any) => Rule.required()
-    },
-    {
-      name: 'email',
-      title: 'Email',
-      type: 'string',
-      validation: (Rule: any) => Rule.required().email()
-    },
-    {
-      name: 'phone',
-      title: 'Phone',
-      type: 'string'
-    },
-    {
-      name: 'message',
-      title: 'Message',
-      type: 'text',
-      validation: (Rule: any) => Rule.required()
-    },
-    {
-      name: 'car',
-      title: 'Related Car',
+      name: 'project',
+      title: 'Project',
       type: 'reference',
-      to: [{ type: 'car' }]
+      to: [{ type: 'project' }],
+      validation: (Rule: any) => Rule.required()
     },
     {
       name: 'type',
-      title: 'Inquiry Type',
+      title: 'Booking Type',
       type: 'string',
       options: {
         list: [
-          { title: 'General Inquiry', value: 'general' },
-          { title: 'Car Inquiry', value: 'car_inquiry' },
-          { title: 'Test Drive', value: 'test_drive' },
-          { title: 'Trade In', value: 'trade_in' }
+          { title: 'Car Wash Service', value: 'carwash' },
+          { title: 'Test Drive', value: 'testdrive' },
+          { title: 'Service Appointment', value: 'service_appointment' },
+          { title: 'Sales Consultation', value: 'consultation' },
+          { title: 'Vehicle Inspection', value: 'inspection' }
         ]
       },
-      initialValue: 'general'
+      validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'status',
-      title: 'Status',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'New', value: 'new' },
-          { title: 'In Progress', value: 'in_progress' },
-          { title: 'Resolved', value: 'resolved' }
-        ]
-      },
-      initialValue: 'new'
-    }
-  ],
-  preview: {
-    select: {
-      title: 'name',
-      subtitle: 'email',
-      description: 'type'
-    }
-  }
-}
-
-// Testimonial schema - simplified from complex Prisma testimonial models
-const testimonial = {
-  name: 'testimonial',
-  title: 'Testimonial',
-  type: 'document',
-  fields: [
-    {
-      name: 'name',
+      name: 'customerName',
       title: 'Customer Name',
       type: 'string',
       validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'rating',
-      title: 'Rating',
-      type: 'number',
-      validation: (Rule: any) => Rule.required().min(1).max(5)
+      name: 'customerEmail',
+      title: 'Customer Email',
+      type: 'string',
+      validation: (Rule: any) => Rule.required().email()
     },
     {
-      name: 'comment',
-      title: 'Comment',
-      type: 'text',
+      name: 'customerPhone',
+      title: 'Customer Phone',
+      type: 'string',
       validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'carPurchased',
-      title: 'Car Purchased',
-      type: 'string'
+      name: 'scheduledDateTime',
+      title: 'Scheduled Date & Time',
+      type: 'datetime',
+      validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'image',
-      title: 'Customer Photo',
-      type: 'image',
+      name: 'service',
+      title: 'Selected Service',
+      type: 'reference',
+      to: [{ type: 'service' }],
+      hidden: ({ document }: any) => !['carwash', 'service_appointment'].includes(document?.type)
+    },
+    {
+      name: 'vehicle',
+      title: 'Vehicle (for test drive)',
+      type: 'reference',
+      to: [{ type: 'vehicle' }],
+      hidden: ({ document }: any) => document?.type !== 'testdrive'
+    },
+    {
+      name: 'customerVehicle',
+      title: 'Customer Vehicle Info',
+      type: 'object',
+      fields: [
+        { name: 'make', title: 'Make', type: 'string' },
+        { name: 'model', title: 'Model', type: 'string' },
+        { name: 'year', title: 'Year', type: 'number' },
+        { name: 'licensePlate', title: 'License Plate', type: 'string' },
+        { name: 'color', title: 'Color', type: 'string' }
+      ],
+      hidden: ({ document }: any) => !['carwash', 'service_appointment', 'inspection'].includes(document?.type)
+    },
+    {
+      name: 'notes',
+      title: 'Special Instructions / Notes',
+      type: 'text',
+      rows: 3
+    },
+    {
+      name: 'status',
+      title: 'Booking Status',
+      type: 'string',
       options: {
-        hotspot: true,
-      }
+        list: [
+          { title: 'New Request', value: 'new' },
+          { title: 'Confirmed', value: 'confirmed' },
+          { title: 'In Progress', value: 'in_progress' },
+          { title: 'Completed', value: 'completed' },
+          { title: 'Cancelled', value: 'cancelled' },
+          { title: 'No Show', value: 'no_show' }
+        ]
+      },
+      initialValue: 'new',
+      validation: (Rule: any) => Rule.required()
     },
     {
-      name: 'featured',
-      title: 'Featured',
+      name: 'totalPrice',
+      title: 'Total Price (EUR)',
+      type: 'number',
+      validation: (Rule: any) => Rule.min(0)
+    },
+    {
+      name: 'paid',
+      title: 'Payment Status',
       type: 'boolean',
       initialValue: false
+    },
+    {
+      name: 'assignedTo',
+      title: 'Assigned Team Member',
+      type: 'reference',
+      to: [{ type: 'teamMember' }]
     }
   ],
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'rating',
-      media: 'image'
+      customerName: 'customerName',
+      type: 'type',
+      scheduledDateTime: 'scheduledDateTime',
+      status: 'status',
+      project: 'project.name'
     },
     prepare(selection: any) {
-      const { title, subtitle } = selection
+      const { customerName, type, scheduledDateTime, status, project } = selection
+      const statusEmoji = {
+        new: '🆕',
+        confirmed: '✅',
+        in_progress: '⏳',
+        completed: '✅',
+        cancelled: '❌',
+        no_show: '👻'
+      }
+
       return {
-        title,
-        subtitle: `${subtitle}/5 stars`
+        title: `${customerName} - ${type}`,
+        subtitle: `${project} • ${new Date(scheduledDateTime).toLocaleDateString()} • ${statusEmoji[status as keyof typeof statusEmoji]} ${status}`,
       }
     }
   }
 }
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [car, contactInquiry, testimonial],
+  types: [
+    // Project management
+    project,
+
+    // Core automotive schemas
+    vehicle,
+    service,
+    booking,
+    contactInquiry,
+    testimonial,
+
+    // Business & team
+    businessInfo,
+    teamMember,
+    blogPost,
+
+    // Utility schemas
+    localizedString,
+    localizedText,
+    localizedRichText,
+    seoFields,
+  ],
 }

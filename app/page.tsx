@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 import HomePage from './components/HomePage'
+import FloatingContactWidget from './components/FloatingContactWidget'
+import SimplePerformanceMonitor from './components/SimplePerformanceMonitor'
 import { siteConfig } from './lib/siteConfig'
 
 export const metadata: Metadata = {
@@ -57,5 +59,11 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  return <HomePage />
+  return (
+    <>
+      <HomePage />
+      <FloatingContactWidget />
+      <SimplePerformanceMonitor />
+    </>
+  )
 }

@@ -19,22 +19,28 @@ import {
 const siteConfig = {
   name: 'Kroi Auto Center',
   phone: {
-    display: '+358 40 123 4567',
-    tel: '+358401234567',
+    primary: {
+      display: '+358 41 318 8214',
+      tel: '+358413188214',
+    },
+    secondary: {
+      display: '+358 44 242 3508',
+      tel: '+358442423508',
+    }
   },
-  whatsapp: '+358401234567',
-  email: 'info@kroiauto.fi',
+  whatsapp: '+358413188214',
+  email: 'kroiautocenter@gmail.com',
   address: {
-    street: 'Autokauppakatu 25',
+    street: 'Läkkisepäntie 15 B 3',
     city: 'Helsinki',
-    postalCode: '00180',
+    postalCode: '00620',
     country: 'Finland',
-    mapsQuery: 'Autokauppakatu 25, 00180 Helsinki, Finland',
+    mapsQuery: 'Läkkisepäntie 15 B 3, 00620 Helsinki, Finland',
   },
   hours: {
-    weekdays: '9:00 - 18:00',
-    saturday: '10:00 - 16:00',
-    sunday: 'Closed'
+    weekdays: '10:00 - 18:00',
+    saturday: '11:00 - 17:00',
+    sunday: 'Suljettu'
   },
   features: {
     vehicles: '100+',
@@ -72,24 +78,24 @@ export default function FloatingContactWidget() {
       if (currentDay === 0) {
         // Sunday - Closed
         isOpen = false;
-        nextChange = 'Opens Monday at 9:00 AM';
+        nextChange = 'Aukeaa maanantaina klo 10:00';
       } else if (currentDay === 6) {
         // Saturday
-        if (currentHour >= 10 && currentHour < 16) {
+        if (currentHour >= 11 && currentHour < 17) {
           isOpen = true;
-          nextChange = `Closes at 4:00 PM`;
+          nextChange = `Sulkeutuu klo 17:00`;
         } else {
           isOpen = false;
-          nextChange = currentHour < 10 ? 'Opens at 10:00 AM' : 'Opens Monday at 9:00 AM';
+          nextChange = currentHour < 11 ? 'Aukeaa klo 11:00' : 'Aukeaa maanantaina klo 10:00';
         }
       } else {
         // Monday - Friday
-        if (currentHour >= 9 && currentHour < 18) {
+        if (currentHour >= 10 && currentHour < 18) {
           isOpen = true;
-          nextChange = `Closes at 6:00 PM`;
+          nextChange = `Sulkeutuu klo 18:00`;
         } else {
           isOpen = false;
-          nextChange = currentHour < 9 ? 'Opens at 9:00 AM' : 'Opens tomorrow at 9:00 AM';
+          nextChange = currentHour < 10 ? 'Aukeaa klo 10:00' : 'Aukeaa huomenna klo 10:00';
         }
       }
 
@@ -107,9 +113,9 @@ export default function FloatingContactWidget() {
     {
       id: 'vehicles',
       icon: Car,
-      label: 'Browse Vehicles',
+      label: 'Selaa Autoja',
       action: () => {
-        window.location.href = '/cars';
+        window.location.href = '/autot';
       },
       bgColor: 'bg-blue-500',
       hoverColor: 'hover:bg-blue-600',
@@ -120,7 +126,7 @@ export default function FloatingContactWidget() {
       icon: MessageCircle,
       label: 'WhatsApp',
       action: () => {
-        const message = 'Hello! I am interested in your vehicles.';
+        const message = 'Hei! Olen kiinnostunut autoistanne ja haluaisin lisätietoja.';
         window.open(`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
       },
       bgColor: 'bg-green-500',
@@ -130,9 +136,9 @@ export default function FloatingContactWidget() {
     {
       id: 'phone',
       icon: Phone,
-      label: 'Call Us',
+      label: 'Soita Meille',
       action: () => {
-        window.open(`tel:${siteConfig.phone.tel}`, '_self');
+        window.open(`tel:${siteConfig.phone.primary.tel}`, '_self');
       },
       bgColor: 'bg-indigo-500',
       hoverColor: 'hover:bg-indigo-600',
@@ -141,10 +147,10 @@ export default function FloatingContactWidget() {
     {
       id: 'email',
       icon: Mail,
-      label: 'Email Us',
+      label: 'Lähetä Sähköposti',
       action: () => {
-        const subject = 'Vehicle Inquiry - Kroi Auto Center';
-        const body = 'Hello,\n\nI am interested in your vehicles and would like more information.\n\nThank you!';
+        const subject = 'Autokysely - Kroi Auto Center';
+        const body = 'Hei,\n\nOlen kiinnostunut autoistanne ja haluaisin lisätietoja.\n\nKiitos!';
         window.open(`mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_self');
       },
       bgColor: 'bg-gray-600',
@@ -154,7 +160,7 @@ export default function FloatingContactWidget() {
     {
       id: 'location',
       icon: MapPin,
-      label: 'Visit Showroom',
+      label: 'Käy Myymälässä',
       action: () => {
         const address = encodeURIComponent(siteConfig.address.mapsQuery);
         window.open(`https://maps.google.com/maps?q=${address}`, '_blank');
@@ -189,7 +195,7 @@ export default function FloatingContactWidget() {
                   <div className="flex items-center space-x-1">
                     <div className={`w-2 h-2 rounded-full ${isBusinessOpen ? 'bg-green-500' : 'bg-red-500'}`}></div>
                     <span className={`text-xs ${isBusinessOpen ? 'text-green-600' : 'text-red-600'}`}>
-                      {isBusinessOpen ? 'Open now' : 'Closed'}
+                      {isBusinessOpen ? 'Avoinna nyt' : 'Suljettu'}
                     </span>
                   </div>
                 </div>
@@ -206,19 +212,19 @@ export default function FloatingContactWidget() {
             <div className="mb-4 p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <Clock className="w-4 h-4 text-gray-600" />
-                <span className="text-sm font-medium text-gray-700">Business Hours</span>
+                <span className="text-sm font-medium text-gray-700">Aukioloajat</span>
               </div>
               <div className="text-xs text-gray-600 space-y-1">
                 <div className="flex justify-between">
-                  <span>Mon - Fri:</span>
+                  <span>Ma - Pe:</span>
                   <span className="font-medium">{siteConfig.hours.weekdays}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Saturday:</span>
+                  <span>Lauantai:</span>
                   <span className="font-medium">{siteConfig.hours.saturday}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Sunday:</span>
+                  <span>Sunnuntai:</span>
                   <span className="font-medium">{siteConfig.hours.sunday}</span>
                 </div>
               </div>
@@ -255,16 +261,16 @@ export default function FloatingContactWidget() {
               <div className="grid grid-cols-2 gap-3 text-center">
                 <div>
                   <div className="text-lg font-bold text-gray-900">{siteConfig.features.vehicles}</div>
-                  <div className="text-xs text-gray-600">Vehicles Available</div>
+                  <div className="text-xs text-gray-600">Autoja Saatavilla</div>
                 </div>
                 <div>
                   <div className="text-lg font-bold text-gray-900">{siteConfig.features.years}</div>
-                  <div className="text-xs text-gray-600">Years Experience</div>
+                  <div className="text-xs text-gray-600">Vuoden Kokemus</div>
                 </div>
               </div>
               <div className="mt-2 text-center">
                 <div className="text-sm font-bold text-blue-600">⭐ {siteConfig.features.rating}/5.0</div>
-                <div className="text-xs text-gray-600">{siteConfig.features.customers} Satisfied Customers</div>
+                <div className="text-xs text-gray-600">{siteConfig.features.customers} Tyytyväistä Asiakasta</div>
               </div>
             </div>
           </motion.div>
@@ -314,7 +320,7 @@ export default function FloatingContactWidget() {
         {/* Tooltip */}
         {!isExpanded && (
           <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-            {isBusinessOpen ? 'Find your perfect car - We\'re open!' : 'Contact us - We respond quickly!'}
+            {isBusinessOpen ? 'Löydä täydellinen auto - Olemme auki!' : 'Ota yhteyttä - Vastaamme nopeasti!'}
             <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
           </div>
         )}
@@ -322,8 +328,8 @@ export default function FloatingContactWidget() {
 
       {/* Screen Reader Support */}
       <span className="sr-only">
-        Contact {siteConfig.name} - {isBusinessOpen ? 'Currently open' : 'Currently closed'}.
-        Multiple contact methods available including vehicle browsing, WhatsApp, phone, email, and showroom location.
+        Ota yhteyttä {siteConfig.name} - {isBusinessOpen ? 'Tällä hetkellä auki' : 'Tällä hetkellä kiinni'}.
+        Useita yhteystapoja saatavilla: autojen selaus, WhatsApp, puhelin, sähköposti ja myymälävierailu.
       </span>
     </div>
   );

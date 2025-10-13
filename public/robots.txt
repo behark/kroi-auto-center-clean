@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Allow specific paths
+Allow: /autot
+Allow: /palvelut
+Allow: /rahoitus
+Allow: /tietoa
+Allow: /yhteystiedot
+Allow: /cars
+Allow: /services
+Allow: /financing
+Allow: /about
+Allow: /contact
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /studio/
+
+# Allow sitemap
+Sitemap: https://kroiautocenter.fi/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
