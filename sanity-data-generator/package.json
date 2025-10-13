@@ -1,0 +1,35 @@
+{
+  "name": "sanity-automotive-data-generator",
+  "version": "1.0.0",
+  "description": "Data generation scripts for automotive Sanity CMS projects",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate-kroi": "node generators/kroi-auto-center.js",
+    "generate-carwash": "node generators/car-wash-clean.js",
+    "generate-kosovo": "node generators/auto-ani-kosovo.js",
+    "generate-all": "npm run generate-kroi && npm run generate-carwash && npm run generate-kosovo",
+    "generate-samples": "node scripts/generate-sample-data.js",
+    "import-data": "node import-data.js",
+    "import-kroi": "node import-data.js kroi",
+    "import-carwash": "node import-data.js carwash",
+    "import-kosovo": "node import-data.js kosovo",
+    "setup": "npm run generate-samples"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.10.0",
+    "uuid": "^9.0.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  },
+  "keywords": [
+    "sanity",
+    "automotive",
+    "cms",
+    "data-generation"
+  ],
+  "author": "Automotive CMS Team",
+  "license": "MIT"
+}

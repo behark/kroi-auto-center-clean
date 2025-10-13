@@ -2,7 +2,7 @@
 
 import { useState, useCallback, memo } from 'react'
 import { motion } from 'framer-motion'
-import { Heart, Eye, ArrowRight, Loader2 } from 'lucide-react'
+import { Heart, Eye, ArrowRight, Loader2, Car } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -89,26 +89,25 @@ const CarCard = memo(({ car, index, isLoading, priority = false }: CarCardProps)
           </div>
         )}
 
-        {!imageError && (
-          <Image
-            src={car.image}
-            alt={car.name}
-            fill
-            className={`object-cover transition-all duration-500 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            } group-hover:scale-105`}
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            priority={priority}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        )}
+        <Image
+          src={car.image || '/images/placeholder-vehicle.svg'}
+          alt={car.name}
+          fill
+          className={`object-cover transition-all duration-500 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          } group-hover:scale-105`}
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
 
         {imageError && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-gray-400">
             <div className="text-center">
-              <div className="text-2xl mb-2">🚗</div>
-              <div className="text-sm">Kuvaa ei voitu ladata</div>
+              <Car className="mx-auto h-12 w-12 mb-2 text-blue-400" />
+              <div className="text-sm font-medium text-blue-600">Kroi Auto Center</div>
+              <div className="text-xs text-gray-500">Kuvaa ei voitu ladata</div>
             </div>
           </div>
         )}

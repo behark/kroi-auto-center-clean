@@ -57,14 +57,14 @@ export default function VehicleDetailPage({ car, relatedCars }: Props) {
 
   // Related vehicles are passed as prop from server component
 
-  // For demo, we'll use the main image and create a gallery
+  // For demo, we'll use the main image and create a gallery with fallbacks
   const imageGallery = [
-    car.image,
-    car.image, // In production, these would be different images
-    car.image,
-    car.image,
-    car.image
-  ]
+    car.image || '/images/placeholder-vehicle.svg',
+    car.image || '/images/placeholder-vehicle.svg', // In production, these would be different images
+    car.image || '/images/placeholder-vehicle.svg',
+    car.image || '/images/placeholder-vehicle.svg',
+    car.image || '/images/placeholder-vehicle.svg'
+  ].filter(Boolean)
 
   // Calculate monthly payment
   const calculateMonthlyPayment = () => {
@@ -192,6 +192,12 @@ export default function VehicleDetailPage({ car, relatedCars }: Props) {
                       fill
                       className="object-cover"
                       priority
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (target.src !== '/images/placeholder-vehicle.svg') {
+                          target.src = '/images/placeholder-vehicle.svg';
+                        }
+                      }}
                     />
                   </div>
                   <button

@@ -118,7 +118,7 @@ const PerformanceMonitor = () => {
 
       // Check memory every 60 seconds (less frequent) and only in development
       let memoryInterval: NodeJS.Timeout | null = null
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV !== 'production') {
         memoryInterval = setInterval(checkMemory, 60000)
       }
 

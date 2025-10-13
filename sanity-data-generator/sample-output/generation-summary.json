@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-10-13T15:02:06.298Z",
+  "projects": [
+    {
+      "name": "kroi-auto-center",
+      "businessInfo": true,
+      "vehicles": 18,
+      "services": 7,
+      "teamMembers": 3
+    },
+    {
+      "name": "car-wash-clean",
+      "businessInfo": true,
+      "vehicles": 0,
+      "services": 6,
+      "teamMembers": 3
+    },
+    {
+      "name": "auto-ani-kosovo",
+      "businessInfo": true,
+      "vehicles": 20,
+      "services": 8,
+      "teamMembers": 4
+    }
+  ],
+  "totalDocuments": 72
+}

@@ -1,0 +1,1416 @@
+[
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-1",
+    "title": "2025 Volkswagen Passat",
+    "slug": {
+      "_type": "slug",
+      "current": "2025-volkswagen-passat"
+    },
+    "brand": "Volkswagen",
+    "model": "Passat",
+    "year": 2025,
+    "price": 17800,
+    "negotiable": true,
+    "mileage": 2386,
+    "fuelType": "gasoline",
+    "transmission": "automatic",
+    "drivetrain": "awd",
+    "engine": "2.0L Turbo 4-cylinder",
+    "color": "Reflex Silver",
+    "interiorColor": "Musta",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Volkswagen-Passat-0"
+      }
+    },
+    "description": "Hyväkuntoinen 2025 Volkswagen Passat. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Adaptive Cruise Control",
+      "Digital Cockpit",
+      "Heated Seats"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.0L Turbo 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Reflex Silver"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": true,
+    "priority": 49,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2025 Volkswagen Passat - Kroi Auto Center",
+        "en": "2025 Volkswagen Passat - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2025 Volkswagen Passat. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2025 Volkswagen Passat. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-2",
+    "title": "2015 Toyota RAV4",
+    "slug": {
+      "_type": "slug",
+      "current": "2015-toyota-rav4"
+    },
+    "brand": "Toyota",
+    "model": "RAV4",
+    "year": 2015,
+    "price": 27800,
+    "negotiable": false,
+    "mileage": 170179,
+    "fuelType": "diesel",
+    "transmission": "manual",
+    "drivetrain": "fwd",
+    "engine": "2.5L 4-cylinder",
+    "color": "Ruby Flare Pearl",
+    "interiorColor": "Beige",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Toyota-RAV4-1"
+      }
+    },
+    "description": "Hyväkuntoinen 2015 Toyota RAV4. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "AWD Available",
+      "Toyota Safety Sense",
+      "Apple CarPlay",
+      "LED Headlights"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.5L 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Bensiini"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Ruby Flare Pearl"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": true,
+    "priority": 81,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2015 Toyota RAV4 - Kroi Auto Center",
+        "en": "2015 Toyota RAV4 - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2015 Toyota RAV4. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2015 Toyota RAV4. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-3",
+    "title": "2014 Mercedes-Benz GLE",
+    "slug": {
+      "_type": "slug",
+      "current": "2014-mercedes-benz-gle"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "GLE",
+    "year": 2014,
+    "price": 53000,
+    "negotiable": false,
+    "mileage": 201939,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "fwd",
+    "engine": "2.0L Turbo 4-cylinder",
+    "color": "Obsidian Black",
+    "interiorColor": "Harmaa",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-GLE-2"
+      }
+    },
+    "description": "Hyväkuntoinen 2014 Mercedes-Benz GLE. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "4MATIC AWD",
+      "AIRMATIC Suspension",
+      "MBUX Infotainment",
+      "Premium Interior"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.0L Turbo 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Obsidian Black"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "sold",
+    "featured": true,
+    "priority": 49,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2014 Mercedes-Benz GLE - Kroi Auto Center",
+        "en": "2014 Mercedes-Benz GLE - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2014 Mercedes-Benz GLE. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2014 Mercedes-Benz GLE. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-4",
+    "title": "2019 BMW X5",
+    "slug": {
+      "_type": "slug",
+      "current": "2019-bmw-x5"
+    },
+    "brand": "BMW",
+    "model": "X5",
+    "year": 2019,
+    "price": 61000,
+    "negotiable": false,
+    "mileage": 99298,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "fwd",
+    "engine": "3.0L Turbo 6-cylinder",
+    "color": "Phytonic Blue",
+    "interiorColor": "Musta",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-BMW-X5-3"
+      }
+    },
+    "description": "Hyväkuntoinen 2019 BMW X5. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "xDrive AWD",
+      "Adaptive Suspension",
+      "Panoramic Sunroof",
+      "Leather Seats"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Turbo 6-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Phytonic Blue"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 42,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2019 BMW X5 - Kroi Auto Center",
+        "en": "2019 BMW X5 - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2019 BMW X5. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2019 BMW X5. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-5",
+    "title": "2025 Mercedes-Benz C-Class",
+    "slug": {
+      "_type": "slug",
+      "current": "2025-mercedes-benz-c-class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2025,
+    "price": 20000,
+    "negotiable": false,
+    "mileage": 0,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "awd",
+    "engine": "3.0L Turbo V6",
+    "color": "Polar White",
+    "interiorColor": "Ruskea",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-C-Class-4"
+      }
+    },
+    "description": "Hyväkuntoinen 2025 Mercedes-Benz C-Class. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "DYNAMIC SELECT",
+      "LED Headlights",
+      "Leather Interior"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Turbo V6"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Bensiini"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Polar White"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 45,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2025 Mercedes-Benz C-Class - Kroi Auto Center",
+        "en": "2025 Mercedes-Benz C-Class - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2025 Mercedes-Benz C-Class. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2025 Mercedes-Benz C-Class. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-6",
+    "title": "2018 Mercedes-Benz C-Class",
+    "slug": {
+      "_type": "slug",
+      "current": "2018-mercedes-benz-c-class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2018,
+    "price": 29000,
+    "negotiable": true,
+    "mileage": 162744,
+    "fuelType": "hybrid",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "2.0L Turbo 4-cylinder",
+    "color": "Polar White",
+    "interiorColor": "Ruskea",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-C-Class-5"
+      }
+    },
+    "description": "Hyväkuntoinen 2018 Mercedes-Benz C-Class. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "DYNAMIC SELECT",
+      "LED Headlights",
+      "Leather Interior",
+      "MBUX System"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.0L Turbo 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Polar White"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 40,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2018 Mercedes-Benz C-Class - Kroi Auto Center",
+        "en": "2018 Mercedes-Benz C-Class - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2018 Mercedes-Benz C-Class. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2018 Mercedes-Benz C-Class. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-7",
+    "title": "2022 Audi Q7",
+    "slug": {
+      "_type": "slug",
+      "current": "2022-audi-q7"
+    },
+    "brand": "Audi",
+    "model": "Q7",
+    "year": 2022,
+    "price": 69000,
+    "negotiable": false,
+    "mileage": 48793,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "awd",
+    "engine": "3.0L Turbo V6",
+    "color": "Glacier White",
+    "interiorColor": "Ruskea",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Audi-Q7-6"
+      }
+    },
+    "description": "Hyväkuntoinen 2022 Audi Q7. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "quattro AWD",
+      "Air Suspension",
+      "Virtual Cockpit"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Turbo V6"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Bensiini"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Glacier White"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 64,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2022 Audi Q7 - Kroi Auto Center",
+        "en": "2022 Audi Q7 - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2022 Audi Q7. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2022 Audi Q7. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-8",
+    "title": "2019 Mercedes-Benz C-Class",
+    "slug": {
+      "_type": "slug",
+      "current": "2019-mercedes-benz-c-class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2019,
+    "price": 25000,
+    "negotiable": false,
+    "mileage": 103800,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "awd",
+    "engine": "3.0L Turbo V6",
+    "color": "Polar White",
+    "interiorColor": "Harmaa",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-C-Class-7"
+      }
+    },
+    "description": "Hyväkuntoinen 2019 Mercedes-Benz C-Class. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "DYNAMIC SELECT",
+      "LED Headlights",
+      "Leather Interior",
+      "MBUX System"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Turbo V6"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Polar White"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 48,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2019 Mercedes-Benz C-Class - Kroi Auto Center",
+        "en": "2019 Mercedes-Benz C-Class - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2019 Mercedes-Benz C-Class. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2019 Mercedes-Benz C-Class. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-9",
+    "title": "2023 Toyota RAV4",
+    "slug": {
+      "_type": "slug",
+      "current": "2023-toyota-rav4"
+    },
+    "brand": "Toyota",
+    "model": "RAV4",
+    "year": 2023,
+    "price": 26800,
+    "negotiable": true,
+    "mileage": 36096,
+    "fuelType": "gasoline",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "2.5L 4-cylinder",
+    "color": "Midnight Black",
+    "interiorColor": "Musta",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Toyota-RAV4-8"
+      }
+    },
+    "description": "Hyväkuntoinen 2023 Toyota RAV4. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "AWD Available",
+      "Toyota Safety Sense",
+      "Apple CarPlay",
+      "LED Headlights"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.5L 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Diesel"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Midnight Black"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 60,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2023 Toyota RAV4 - Kroi Auto Center",
+        "en": "2023 Toyota RAV4 - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2023 Toyota RAV4. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2023 Toyota RAV4. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-10",
+    "title": "2022 Mercedes-Benz GLE",
+    "slug": {
+      "_type": "slug",
+      "current": "2022-mercedes-benz-gle"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "GLE",
+    "year": 2022,
+    "price": 38000,
+    "negotiable": false,
+    "mileage": 67974,
+    "fuelType": "hybrid",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "3.0L Turbo V6",
+    "color": "Obsidian Black",
+    "interiorColor": "Beige",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-GLE-9"
+      }
+    },
+    "description": "Hyväkuntoinen 2022 Mercedes-Benz GLE. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "4MATIC AWD",
+      "AIRMATIC Suspension",
+      "MBUX Infotainment",
+      "Premium Interior"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Turbo V6"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Diesel"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Obsidian Black"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 55,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2022 Mercedes-Benz GLE - Kroi Auto Center",
+        "en": "2022 Mercedes-Benz GLE - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2022 Mercedes-Benz GLE. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2022 Mercedes-Benz GLE. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-11",
+    "title": "2022 Ford Explorer",
+    "slug": {
+      "_type": "slug",
+      "current": "2022-ford-explorer"
+    },
+    "brand": "Ford",
+    "model": "Explorer",
+    "year": 2022,
+    "price": 24200,
+    "negotiable": true,
+    "mileage": 46888,
+    "fuelType": "diesel",
+    "transmission": "automatic",
+    "drivetrain": "fwd",
+    "engine": "2.3L EcoBoost",
+    "color": "Agate Black",
+    "interiorColor": "Harmaa",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Ford-Explorer-10"
+      }
+    },
+    "description": "Hyväkuntoinen 2022 Ford Explorer. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Intelligent AWD",
+      "SYNC 3",
+      "Co-Pilot360"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.3L EcoBoost"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Agate Black"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "sold",
+    "featured": false,
+    "priority": 60,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2022 Ford Explorer - Kroi Auto Center",
+        "en": "2022 Ford Explorer - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2022 Ford Explorer. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2022 Ford Explorer. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-12",
+    "title": "2018 Ford Mustang",
+    "slug": {
+      "_type": "slug",
+      "current": "2018-ford-mustang"
+    },
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 2018,
+    "price": 25800,
+    "negotiable": false,
+    "mileage": 114468,
+    "fuelType": "hybrid",
+    "transmission": "automatic",
+    "drivetrain": "fwd",
+    "engine": "5.0L V8",
+    "color": "Velocity Blue",
+    "interiorColor": "Musta",
+    "category": "coupe",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Ford-Mustang-11"
+      }
+    },
+    "description": "Hyväkuntoinen 2018 Ford Mustang. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Performance Package",
+      "SYNC 3",
+      "Premium Audio"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "5.0L V8"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Diesel"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Velocity Blue"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 60,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2018 Ford Mustang - Kroi Auto Center",
+        "en": "2018 Ford Mustang - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2018 Ford Mustang. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2018 Ford Mustang. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-13",
+    "title": "2024 Toyota Camry",
+    "slug": {
+      "_type": "slug",
+      "current": "2024-toyota-camry"
+    },
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "price": 26200,
+    "negotiable": false,
+    "mileage": 24478,
+    "fuelType": "gasoline",
+    "transmission": "manual",
+    "drivetrain": "fwd",
+    "engine": "2.5L 4-cylinder",
+    "color": "Celestial Silver",
+    "interiorColor": "Harmaa",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Toyota-Camry-12"
+      }
+    },
+    "description": "Hyväkuntoinen 2024 Toyota Camry. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Toyota Safety Sense",
+      "Entune Infotainment",
+      "LED Lighting"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.5L 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Celestial Silver"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 72,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2024 Toyota Camry - Kroi Auto Center",
+        "en": "2024 Toyota Camry - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2024 Toyota Camry. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2024 Toyota Camry. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-14",
+    "title": "2015 Ford Explorer",
+    "slug": {
+      "_type": "slug",
+      "current": "2015-ford-explorer"
+    },
+    "brand": "Ford",
+    "model": "Explorer",
+    "year": 2015,
+    "price": 27200,
+    "negotiable": false,
+    "mileage": 191955,
+    "fuelType": "diesel",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "2.3L EcoBoost",
+    "color": "Magnetic Metallic",
+    "interiorColor": "Ruskea",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Ford-Explorer-13"
+      }
+    },
+    "description": "Hyväkuntoinen 2015 Ford Explorer. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Intelligent AWD",
+      "SYNC 3",
+      "Co-Pilot360",
+      "Terrain Management"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.3L EcoBoost"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Magnetic Metallic"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 40,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2015 Ford Explorer - Kroi Auto Center",
+        "en": "2015 Ford Explorer - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2015 Ford Explorer. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2015 Ford Explorer. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-15",
+    "title": "2025 Toyota Camry",
+    "slug": {
+      "_type": "slug",
+      "current": "2025-toyota-camry"
+    },
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2025,
+    "price": 22200,
+    "negotiable": true,
+    "mileage": 0,
+    "fuelType": "hybrid",
+    "transmission": "manual",
+    "drivetrain": "fwd",
+    "engine": "2.5L Hybrid",
+    "color": "Celestial Silver",
+    "interiorColor": "Musta",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Toyota-Camry-14"
+      }
+    },
+    "description": "Hyväkuntoinen 2025 Toyota Camry. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Toyota Safety Sense",
+      "Entune Infotainment",
+      "LED Lighting"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.5L Hybrid"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Bensiini"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Celestial Silver"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "available",
+    "featured": false,
+    "priority": 42,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2025 Toyota Camry - Kroi Auto Center",
+        "en": "2025 Toyota Camry - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2025 Toyota Camry. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2025 Toyota Camry. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-16",
+    "title": "2018 Ford Explorer",
+    "slug": {
+      "_type": "slug",
+      "current": "2018-ford-explorer"
+    },
+    "brand": "Ford",
+    "model": "Explorer",
+    "year": 2018,
+    "price": 37200,
+    "negotiable": true,
+    "mileage": 104071,
+    "fuelType": "hybrid",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "3.0L Twin-Turbo V6",
+    "color": "Lightning Blue",
+    "interiorColor": "Beige",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Ford-Explorer-15"
+      }
+    },
+    "description": "Hyväkuntoinen 2018 Ford Explorer. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "Intelligent AWD",
+      "SYNC 3",
+      "Co-Pilot360",
+      "Terrain Management"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "3.0L Twin-Turbo V6"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Diesel"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Lightning Blue"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "reserved",
+    "featured": false,
+    "priority": 51,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2018 Ford Explorer - Kroi Auto Center",
+        "en": "2018 Ford Explorer - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2018 Ford Explorer. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2018 Ford Explorer. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-17",
+    "title": "2021 Toyota RAV4",
+    "slug": {
+      "_type": "slug",
+      "current": "2021-toyota-rav4"
+    },
+    "brand": "Toyota",
+    "model": "RAV4",
+    "year": 2021,
+    "price": 22800,
+    "negotiable": false,
+    "mileage": 76669,
+    "fuelType": "gasoline",
+    "transmission": "manual",
+    "drivetrain": "fwd",
+    "engine": "2.5L 4-cylinder",
+    "color": "Ruby Flare Pearl",
+    "interiorColor": "Harmaa",
+    "category": "suv",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Toyota-RAV4-16"
+      }
+    },
+    "description": "Hyväkuntoinen 2021 Toyota RAV4. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "AWD Available",
+      "Toyota Safety Sense",
+      "Apple CarPlay"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.5L 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Bensiini"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Ruby Flare Pearl"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "reserved",
+    "featured": false,
+    "priority": 81,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2021 Toyota RAV4 - Kroi Auto Center",
+        "en": "2021 Toyota RAV4 - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2021 Toyota RAV4. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2021 Toyota RAV4. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  },
+  {
+    "_type": "vehicle",
+    "_id": "kroi-vehicle-18",
+    "title": "2023 Mercedes-Benz C-Class",
+    "slug": {
+      "_type": "slug",
+      "current": "2023-mercedes-benz-c-class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2023,
+    "price": 37000,
+    "negotiable": true,
+    "mileage": 49021,
+    "fuelType": "hybrid",
+    "transmission": "manual",
+    "drivetrain": "awd",
+    "engine": "2.0L Turbo 4-cylinder",
+    "color": "Polar White",
+    "interiorColor": "Ruskea",
+    "category": "sedan",
+    "condition": "used",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-Mercedes-Benz-C-Class-17"
+      }
+    },
+    "description": "Hyväkuntoinen 2023 Mercedes-Benz C-Class. Huollettu säännöllisesti ja pidetty hyvässä kunnossa. Mukana huoltokirja ja kaikki alkuperäiset avaimet.",
+    "features": [
+      "DYNAMIC SELECT",
+      "LED Headlights",
+      "Leather Interior",
+      "MBUX System"
+    ],
+    "specifications": [
+      {
+        "category": "Engine & Performance",
+        "label": "Moottori",
+        "value": "2.0L Turbo 4-cylinder"
+      },
+      {
+        "category": "Engine & Performance",
+        "label": "Polttoaine",
+        "value": "Hybridi"
+      },
+      {
+        "category": "Exterior Features",
+        "label": "Väri",
+        "value": "Polar White"
+      },
+      {
+        "category": "Safety Features",
+        "label": "Turvallisuus",
+        "value": "ABS, ESP, Turvatyynyt"
+      }
+    ],
+    "status": "reserved",
+    "featured": false,
+    "priority": 56,
+    "contactPerson": "Mikael Virtanen",
+    "location": "Tampere",
+    "seo": {
+      "_type": "seo",
+      "title": {
+        "_type": "localizedString",
+        "fi": "2023 Mercedes-Benz C-Class - Kroi Auto Center",
+        "en": "2023 Mercedes-Benz C-Class - Kroi Auto Center"
+      },
+      "description": {
+        "_type": "localizedText",
+        "fi": "Katsasta tämä 2023 Mercedes-Benz C-Class. Huollettu, tarkastettu ja valmis uuteen kotiin.",
+        "en": "Check out this 2023 Mercedes-Benz C-Class. Serviced, inspected and ready for a new home."
+      },
+      "keywords": [],
+      "ogImage": null
+    }
+  }
+]

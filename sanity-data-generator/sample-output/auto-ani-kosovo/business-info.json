@@ -1,0 +1,142 @@
+{
+  "_type": "businessInfo",
+  "_id": "auto-ani-kosovo-business",
+  "businessName": {
+    "_type": "localizedString",
+    "fi": "AUTO ANI",
+    "en": "AUTO ANI"
+  },
+  "businessType": "dealership",
+  "tagline": {
+    "_type": "localizedString",
+    "fi": "Automjetet më të mira në Kosovë",
+    "en": "The best cars in Kosovo"
+  },
+  "description": {
+    "_type": "localizedText",
+    "fi": "AUTO ANI është dealer kryesor i automjeteve në Kosovë me mbi 15 vjet përvojë. Ofrojmë automjete të reja dhe të përdorura, si dhe shërbime të plota të mirëmbajtjes. Cilësia dhe shërbimi janë prioritetet tona kryesore.",
+    "en": "AUTO ANI is a leading car dealer in Kosovo with over 15 years of experience. We offer new and used vehicles, as well as complete maintenance services. Quality and service are our main priorities."
+  },
+  "contact": {
+    "phone": "+383 44 123 456",
+    "email": "info@autoani.net",
+    "website": "https://www.autoani.net",
+    "emergencyPhone": "+383 44 987 654"
+  },
+  "locations": [
+    {
+      "name": {
+        "_type": "localizedString",
+        "fi": "Zyra Kryesore",
+        "en": "Main Office"
+      },
+      "isPrimary": true,
+      "address": {
+        "street": "Rruga Agim Ramadani 45",
+        "city": "Prishtinë",
+        "postalCode": "10000",
+        "country": "Kosovo"
+      },
+      "coordinates": {
+        "lat": 42.6629,
+        "lng": 21.1655
+      },
+      "phone": "+383 44 123 456",
+      "email": "prishtina@autoani.net"
+    }
+  ],
+  "hours": {
+    "monday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "tuesday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "wednesday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "thursday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "friday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "16:00",
+      "closed": false
+    },
+    "sunday": {
+      "open": "",
+      "close": "",
+      "closed": true
+    }
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/autoanikosovo",
+    "instagram": "https://instagram.com/autoanikosovo",
+    "youtube": "https://youtube.com/@autoanikosovo"
+  },
+  "legal": {
+    "businessId": "70123456",
+    "vatNumber": "KS70123456",
+    "registeredName": "AUTO ANI SH.P.K."
+  },
+  "servicesOffered": [
+    "new-cars",
+    "used-cars",
+    "financing",
+    "trade-ins",
+    "oil-change",
+    "brakes",
+    "tires",
+    "engine",
+    "electrical",
+    "body-work"
+  ],
+  "paymentMethods": [
+    "cash",
+    "credit-cards",
+    "debit-cards",
+    "bank-transfer",
+    "installments"
+  ],
+  "languagesSpoken": [
+    "sq",
+    "en",
+    "de",
+    "sv"
+  ],
+  "seo": {
+    "_type": "seo",
+    "title": {
+      "_type": "localizedString",
+      "fi": "AUTO ANI - Shitje dhe Mirëmbajtje Automjetesh Prishtinë",
+      "en": "AUTO ANI - Car Sales and Service Pristina"
+    },
+    "description": {
+      "_type": "localizedText",
+      "fi": "Automjete të reja dhe të përdorura, shërbime komplete. Mbi 15 vjet përvojë në Kosovë.",
+      "en": "New and used cars, complete services. Over 15 years of experience in Kosovo."
+    },
+    "keywords": [
+      "automjete",
+      "makina",
+      "Prishtinë",
+      "cars",
+      "Kosovo",
+      "dealership"
+    ],
+    "ogImage": null
+  }
+}

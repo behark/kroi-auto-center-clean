@@ -1,0 +1,148 @@
+{
+  "_type": "businessInfo",
+  "_id": "kroi-auto-center-business",
+  "businessName": {
+    "_type": "localizedString",
+    "fi": "Kroi Auto Center",
+    "en": "Kroi Auto Center"
+  },
+  "businessType": "dealership",
+  "tagline": {
+    "_type": "localizedString",
+    "fi": "Luotettava autokauppa Suomen sydämessä",
+    "en": "Reliable car dealership in the heart of Finland"
+  },
+  "description": {
+    "_type": "localizedText",
+    "fi": "Kroi Auto Center on ollut palvelemassa suomalaisia autoilijoita yli 25 vuotta. Meiltä löydät laajan valikoiman laadukkaita käytettyjä autoja sekä asiantuntevaa huoltopalvelua. Asiakastyytyväisyys on meille tärkeintä.",
+    "en": "Kroi Auto Center has been serving Finnish motorists for over 25 years. We offer a wide selection of quality used cars and expert service. Customer satisfaction is our top priority."
+  },
+  "contact": {
+    "phone": "+358 40 123 4567",
+    "email": "info@kroiauto.fi",
+    "website": "https://www.kroiauto.fi",
+    "emergencyPhone": "+358 40 987 6543"
+  },
+  "locations": [
+    {
+      "name": {
+        "_type": "localizedString",
+        "fi": "Pääkonttori",
+        "en": "Main Office"
+      },
+      "isPrimary": true,
+      "address": {
+        "street": "Teollisuuskatu 15",
+        "city": "Tampere",
+        "postalCode": "33100",
+        "country": "Finland"
+      },
+      "coordinates": {
+        "lat": 61.4991,
+        "lng": 23.7871
+      },
+      "phone": "+358 40 123 4567",
+      "email": "tampere@kroiauto.fi"
+    }
+  ],
+  "hours": {
+    "monday": {
+      "open": "08:00",
+      "close": "17:00",
+      "closed": false
+    },
+    "tuesday": {
+      "open": "08:00",
+      "close": "17:00",
+      "closed": false
+    },
+    "wednesday": {
+      "open": "08:00",
+      "close": "17:00",
+      "closed": false
+    },
+    "thursday": {
+      "open": "08:00",
+      "close": "17:00",
+      "closed": false
+    },
+    "friday": {
+      "open": "08:00",
+      "close": "17:00",
+      "closed": false
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "15:00",
+      "closed": false
+    },
+    "sunday": {
+      "open": "",
+      "close": "",
+      "closed": true
+    }
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/kroiauto",
+    "instagram": "https://instagram.com/kroiauto",
+    "youtube": "https://youtube.com/@kroiauto"
+  },
+  "legal": {
+    "businessId": "1234567-8",
+    "vatNumber": "FI12345678",
+    "registeredName": "Kroi Auto Center Oy",
+    "licenses": [
+      {
+        "name": "Autokaupan toimilupa",
+        "number": "AKT-2019-001",
+        "issuer": "Trafi",
+        "expiryDate": "2025-12-31"
+      }
+    ]
+  },
+  "servicesOffered": [
+    "used-cars",
+    "financing",
+    "trade-ins",
+    "oil-change",
+    "brakes",
+    "tires",
+    "engine",
+    "electrical"
+  ],
+  "paymentMethods": [
+    "cash",
+    "credit-cards",
+    "debit-cards",
+    "bank-transfer",
+    "mobile-pay",
+    "financing",
+    "installments"
+  ],
+  "languagesSpoken": [
+    "fi",
+    "en",
+    "sv"
+  ],
+  "seo": {
+    "_type": "seo",
+    "title": {
+      "_type": "localizedString",
+      "fi": "Kroi Auto Center - Luotettava Autokauppa Tampereella",
+      "en": "Kroi Auto Center - Reliable Car Dealership in Tampere"
+    },
+    "description": {
+      "_type": "localizedText",
+      "fi": "Käytetyt autot, rahoitus ja huoltopalvelut. Yli 25 vuoden kokemus. Tampere, Suomi.",
+      "en": "Used cars, financing and service. Over 25 years of experience. Tampere, Finland."
+    },
+    "keywords": [
+      "käytetyt autot",
+      "autokauppa",
+      "Tampere",
+      "used cars",
+      "car dealership"
+    ],
+    "ogImage": null
+  }
+}
