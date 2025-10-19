@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   keywords: siteConfig.keywords,
   referrer: 'origin-when-cross-origin',
-  colorScheme: 'light dark',
   creator: siteConfig.name,
   publisher: siteConfig.name,
   formatDetection: {
@@ -101,6 +100,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
+  colorScheme: 'light dark',
   themeColor: '#1e40af',
   width: 'device-width',
   initialScale: 1,
